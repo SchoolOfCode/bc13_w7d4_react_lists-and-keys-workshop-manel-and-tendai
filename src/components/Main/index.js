@@ -6,17 +6,20 @@ import samplePosts from "../../libs/data";
 
 import Post from "../Post";
 
-const {postId, title, date, author, text, highlights, image} = samplePosts
+
 
 function Main() {
   const [posts, setPosts] = useState(samplePosts);
-  {
-    posts.map(({ Post }) => {
-      return <Post key={postId} title={title} date={date} author={author} text={text} highlights={highlights}  image={image}/>;
-    });
-  }
+ 
+  
 
-  return <main id="main"></main>;
+  return <main id="main">
+    {
+    posts.map((posts) => { 
+      return <Post key={posts.postId} title={posts.title} date={posts.date} author={posts.author} text={posts.text} highlights={posts.highlights}  image={posts.image.link}/>;
+    })
+  }
+  </main>;
 }
 
 export default Main;
