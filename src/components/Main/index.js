@@ -8,6 +8,11 @@ import Post from '../Post';
 
 function Main() {
   const [posts, setPosts] = useState(samplePosts);
+  {posts.map(({Post})=> {
+    return <Post />
+    } )
+
+  }
 
   return <main id="main"></main>;
 }
